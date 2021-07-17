@@ -1,0 +1,14 @@
+pipeline
+{
+agent any
+stages
+{
+stage('checkout')
+{
+steps
+{
+git url: 'https://github.com/kosurumuniraja/devops_project.git'
+}
+}
+}
+}
