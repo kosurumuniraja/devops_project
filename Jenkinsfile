@@ -1,22 +1,21 @@
-pipeline
-{
-agent any 
-tools
-{
-// insatall the maven version configured as "m3" and add it to the path.
-jdk 'java8'
-maven "maven-3.5.3"
-}
+pipeline {
+    agent any
 
-stages 
-{
-stage('checkout')
-{
-steps
-{
-// get some code from a github repository
-git url: 'https://github.com/kosurumuniraja/devops_project.git'
-}
-}
+    stages {
+        
+        stage("Using curl example") {
+            steps {
+                script {
+                    
+                    final String response = sh(script: """(curl -g -u admin:11a9310d90b6507ebfadf5e6cea76fae43 "http://13.232.41.183:8080/api/json?pretty=true&tree=jobs[name,color,url]")""")   
+                   
+                    
+        
+            }               
+        }
+        
+       
+    }
+
 }
 }
