@@ -13,7 +13,7 @@ pipeline {
 
                    println "Job Name: ( # builds: last ${daysBack} days / overall )  Last Status\n   Number | Trigger | Status | Date | Duration\n"
 
-                   Jenkins.instance.allItems.findAll() {
+                   method hudson.model.ItemGroup getAllItems() {
                    it instanceof Job && it.fullName.matches(jobNamePattern)
                    }.each { job ->
                    builds = job.getBuilds().byTimestamp(System.currentTimeMillis() - daysBack*timeToDays, System.currentTimeMillis())
