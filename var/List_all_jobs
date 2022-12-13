@@ -15,4 +15,4 @@ Jenkins.instance.allItems.findAll() {
     println '   ' + build.number + ' | ' + build.getCauses()[0].getShortDescription() + ' | ' + build.result + ' | ' + build.getTimestampString2() + ' | ' + build.getDurationString()
   }
 }
-return
+//return
